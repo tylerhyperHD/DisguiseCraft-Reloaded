@@ -1,0 +1,101 @@
+#
+# DisguiseCraft Configuration
+#
+
+# Disguise PVP
+#	If you want players to be able to attack those who
+#	are disguised, you should install the ProtocolLib
+#	plugin on your server:
+#		http://dev.bukkit.org/server-mods/protocollib/
+#
+#	If you do not want to install ProtocolLib, DisguiseCraft
+#	can try using its fallback method. However, this can
+#	be dangerous for your server.
+disguisePVP=true
+usePVPFallback=true
+pvpThreads=1
+
+# Optional Event Listeners
+#	Any of the following can be disabled to increase
+#	efficiency or cater to server-specific needs.
+playerHeldItemChange=true
+playerArmSwingAnimation=true
+playerSneakAnimation=true
+disguiseDamageAnimation=true
+disguiseDeathAnimation=true
+itemPickupAnimation=true
+disguiseArmorUpdates=true
+
+# Update Notification
+#	With this set to true, the plugin will check for
+#	and notify those who have the "disguisecraft.update"
+#	permission of plugin updates upon joining.
+updateNotification=false
+
+# Unnatural Slime/MagmaCube Sizes
+#	Here you can set the size for the extra slime
+#	subtypes given. You can choose any number between
+#	-128 and 127, but beware that negative slime
+#	size values will result in upside-down slimes.
+#	These slime properties will also apply
+#	to magma cubes.
+bigger=20
+massive=50
+godzilla=100
+
+# Undisguise on Quit
+#	With this set to true, any disguised player
+#	who leaves the server will be undisguised.
+quitUndisguise=true
+
+# Bandwidth Reduction
+#	To keep disguises perfectly in-sync with
+#	the wearer, DisguiseCraft uses the entity
+#	teleportation packet instead of the 
+#	smaller relative motion packets that
+#	the Vanilla MineCraft server uses.
+#	Set this to true if you wish to have
+#	disguise movements handled in the less
+#	bandwidth-intensive manner.
+bandwidthReduction=false
+
+# Disguise Movement Update Threading
+#	Typically, DisguiseCraft uses the PlayerMoveEvent
+#	in order to track disguises. However, this has
+#	proven to cause lag on servers with large
+#	numbers of disguised players. Use this option
+#	to place updates into separate threads. You can
+#	also set the frequency (in ticks) that they update
+#	the player disguise position.
+movementUpdateThreading=false
+movementUpdateFrequency=4
+
+# Disguise NoPickup Default
+#	With this option set to true, any disguises
+#	created will have the "nopickup" property
+#	automatically set.
+#	This means that disguised players are
+#	automatically set to not pick up items.
+nopickupDefault=false
+
+# Disguise Attack Process Interval
+#	To greatly improve performance, DisguiseCraft
+#	processes "attacks on disguises" in a separate
+#	polling thread. This is how often (in ticks)
+#	that this thread will process attacks.
+attackInterval=2
+
+# Tab List No-Hide
+#	If you have ProtocolLib installed on your server,
+#	you can prevent players from having their name
+#	removed from the client tab list when they disguise.
+noTabHide=true
+
+# Respawn Disguise-View Reset Delay
+#	When a player dies and respawns, the packets for
+#	disguises around him need to be re-sent in order
+#	to prevent invisibility. This option is the number
+#	of ticks to wait after the player has respawned
+#	before sending him the packets of all the disguises
+#	around him.
+respawnResetDelay=20
